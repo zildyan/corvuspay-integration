@@ -1,0 +1,13 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<form name="corvusPaySubmitForm"  xmlns:th="http://www.thymeleaf.org" th:action="${redirectUrl}" method="post">
+    <div th:each="field : ${requestData.requestFields}">
+        <input type="hidden" th:name="|${field.key}|" th:value="${field.value}"/>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        document.forms["corvusPaySubmitForm"].submit();
+    });
+</script>
